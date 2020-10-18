@@ -1,12 +1,13 @@
 from docx.oxml import parse_xml
 from docx import Document
 from colors import *
+from strings import *
 
 advancements = [
 	{
-		"date": "28/06/2020",
+		"date": START_DATE,
 		"version": "0.1",
-		"auteur": "Thomas Bouvier",
+		"auteur": "PLD-BOT",
 		"section": "Toutes",
 		"commentaire": "Création du document"
 	}

@@ -2,7 +2,6 @@ from docx.oxml import parse_xml
 from docx import Document
 from colors import *
 
-from pprint import pp
 
 def generate_tables(master, sort):
 
@@ -17,7 +16,6 @@ def generate_tables(master, sort):
 		new_sort[key] = {}
 
 		table = document.add_table(0, len(value))
-		#table.style = "TableGrid"
 		cells = table.add_row().cells
 
 		for i in range(len(value)):

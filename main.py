@@ -25,7 +25,10 @@ def create_doc_from_file(file, line_break=True):
 
 def separate_cards(content, archives, cards, sort):
 	for c in content:
-		archives.append(c) if c["fields"]["Status"].startswith("Archived") else cards.append(c)
+		try:
+			archives.append(c) if c["fields"]["Status"].startswith("Archived") else cards.append(c)
+		except:
+			pass
 	for c in cards:
 		key, value = c["fields"]["Task Type"], c
 		if key not in sort.keys():
@@ -62,7 +65,7 @@ separate_cards(content, archives, cards, sort)
 generate_chart(chart, sort)
 
 master.append(cover_abstract)
-master.append(generate_advancements(generate_description("DATE DE DEBUT", "AUTEUR AU PIF")))
+master.append(generate_advancements(generate_description(START_DATE, "PLD-Bot")))
 master.append(summary)
 master.append(chart)
 master.append(generate_choices(sort, individuals))

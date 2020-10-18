@@ -2,7 +2,6 @@ from docx.oxml import parse_xml
 from docx import Document
 from colors import *
 
-from pprint import pp
 
 def generate_choices(sort, individuals):
 
